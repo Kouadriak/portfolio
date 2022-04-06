@@ -1,0 +1,932 @@
+/*-----------------------------POLICE PERSONNALISEE-----------------------------*/
+@font-face {
+    font-family: Bebas;
+    src: url(fonts/BebasNeue-Regular.ttf);
+}
+  
+@font-face {
+    font-family: Lemon;
+    src: url(fonts/LEMONMILK_Medium.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: Lemon;
+    src: url(fonts/LEMONMILK_Light.otf);
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(fonts/Roboto-Regular.ttf);
+    font-weight : normal;
+    font-style : normal;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(fonts/Roboto-Black.ttf);
+    font-weight : bold;
+    font-style : normal;
+}    
+
+
+@font-face {
+    font-family: Roboto;
+    src: url(fonts/Roboto_Thin.ttf);
+    font-weight : 200;
+    font-style : normal;
+}
+
+
+
+
+
+/*-----------------------------PROPRIETES GENERALES-----------------------------*/
+*
+{
+    list-style-type: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+html
+{
+    scroll-behavior: smooth;
+}
+
+body
+{
+    overflow-x: hidden;
+    /*Pour une raison inconnue le faire dans le body, est le seul moyen que ça ne désactive pas la propriété sticky qui
+    normalement, cesse de fonctionner quand un des parents a la propriété overflow*/
+}
+
+
+#main_wrapper
+{
+    background-color: rgb(15, 14, 15);
+    color: aliceblue;
+}
+
+
+h1, h2
+{
+    font-family: Lemon, Arial, Helvetica, sans-serif;
+}
+
+p
+{
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+.tittre_section
+{
+    text-align: left;
+    padding-left: 10vw;
+    margin-top: 20vh;
+    border-bottom: 2px solid rgb(254, 191, 17);
+}
+
+
+/*-----------------------------MENU DE NAVIGATION-----------------------------*/
+#horizontal_nav * 
+{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+#horizontal_nav
+{   
+    background-color: rgba(228, 21, 228, 0.39);
+    height: 80px;
+    width: 100%;
+}
+
+/*bouton home*/
+.nav_logo
+{
+    height: 80px;
+    padding: 10px;
+    padding-left: 50px;
+    display: inline-block;
+}
+
+.nav_logo img
+{
+    height: 100%;
+}
+
+/*Menu de navigation*/
+#horizontal_nav ul
+{
+    float: right;
+    margin-right: 60px;
+}
+
+#horizontal_nav ul li 
+{
+    display: inline-block;
+    line-height: 80px;
+    margin-left: 5px;
+}
+
+#horizontal_nav ul li a 
+{
+    color: white;
+    font-size: 17px;
+    text-transform: uppercase;
+
+    padding: 7px 13px;
+    border-radius: 3px;
+}
+
+#horizontal_nav a 
+{
+    transition: all .2s ease-in-out;
+}
+
+/*hover*/
+#horizontal_nav ul a:hover
+{
+    background-color: rgb(254, 191, 17);
+}
+
+/*
+.nav_logo a:hover  dois je supprimer la class nav logo ?
+{
+    background-color:unset;
+}
+*/
+
+/*Burger menu bouton*/
+.check_btn
+{
+    color: white;
+    font-size: 30px;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+
+    cursor: pointer;
+    display: none;
+}
+
+#check
+{
+    display: none;
+}
+
+
+/*logo_burger_menu_local*/
+#horizontal_nav label li 
+{
+    height: 80px;
+    box-sizing: border-box;
+    padding-top: 17px;
+    padding-bottom: 17px;
+
+    margin-right: -10px;
+}
+
+
+#horizontal_nav label li img
+{
+    height: 100%;
+}
+
+
+
+
+
+/*-----------------------------HERO SECTION-----------------------------*/
+
+
+header
+{
+    height: 95vh;
+    background-color: blueviolet;
+    clip-path: polygon(100% 0, 100% 75%, 50% 100%, 0 75%, 0 0);
+    background: url(images/textures/hero_background_8BIT.png);    
+}
+
+#hero 
+{
+    background-color: rgba(0, 255, 85, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /*On soustrait la taille du horizontal nav pour garder les mêmes proportions.*/
+    height: calc(71vh - 80px) ;
+}
+
+.hero_texte
+{
+    font-family: Lemon, Arial, Helvetica, sans-serif;
+    text-shadow: 3px 2px 30px rgba(255, 255, 255, 0.322);
+}
+
+.hero_texte h1
+{
+    /*Utiliser clamp pour avoir une taille responsive sans pour autant qu'elle puisse aller à des valeurs extrêmes.*/
+    font-size: clamp(1.9rem, 8vw , 6.5rem);
+}
+
+.hero_texte h2
+{
+    font-size: clamp(1.40rem, 6vw , 4.82rem);
+}
+
+.hero_texte h3
+{
+    /*font-size: clamp(1.455rem, 6.2vw , 5rem);*/
+    font-size: clamp(0.85rem, 3.67vw , 2.95rem);
+    font-family: Lemon ,Arial, Helvetica, sans-serif;
+    font-weight: 200;
+}
+
+#hero img
+{
+    margin-left: 5vw;
+    border-radius: 300rem;
+    width: 10%;
+    transform: rotate(10deg);
+
+    transition: all .2s ease-in-out;
+}
+
+#hero img:hover
+{
+    box-shadow: 5px 5px 0px rgb(255, 255, 255);
+}
+
+
+
+
+
+/*-----------------------------VERTICAL NAV-----------------------------*/
+#Vertical_Nav
+{
+    position:sticky;
+    top: 5vh;
+    display: flex;
+    justify-content: end;
+   
+    margin-top: -40vh;
+    width: 100%;
+}
+
+.sticky_nav_background
+{
+    background-color: yellow;
+    background: url(images/textures/Cutted_Vertical_nav_yellow_blue_8bit.png) center;
+    padding: 1rem;
+    border-radius: 100rem;
+    margin-right: 1rem; 
+}
+
+#Vertical_Nav ul
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#Vertical_Nav li 
+{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#Vertical_Nav img
+{
+    width: 3rem;
+    transition: all .2s ease-in-out;
+}
+
+#Vertical_Nav img:hover
+{
+  transform: scale(1.2);
+}
+
+
+
+
+
+/*-----------------------------About-----------------------------*/
+#about
+{
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#biographie
+{
+    background-color: rgba(68, 68, 68, 0.116);
+    border-radius: 50px;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    
+    padding: 2rem;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.568);
+
+    /*Pour pouvoir passer devant la Div du Vertical Nav*/
+    z-index: 2; 
+}
+
+.biographie_texte
+{
+    width: 50%;
+}
+
+#biographie p 
+{
+    width: 100%;
+    font-size: 1.5rem;
+
+    padding-bottom: 1rem; /*Ici padding est là pour que la ligne Border ne soit pas collée au texte quand elle apparaîtra sur écran vertical*/
+}
+
+#biographie em
+{
+    color: rgb(254, 191, 17);
+    font-style: normal;
+    transition: all .2s ease-in-out;
+}
+
+#biographie em:hover
+{
+    color: aqua;
+}
+
+
+
+
+.profil
+{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#biographie img
+{
+    width: 100%;
+}
+
+.profil img 
+{
+    border-radius: 100rem;
+}
+
+
+/*Technologies sur lesquel je me forme*/
+#biographie h2 /*Le titre de cette sous partie*/
+{
+    padding-top: 1rem;
+}
+
+.techno
+{
+    margin-top: 2vh;
+    display: flex;
+}
+
+.techno_logo 
+{
+    width: 18%;
+    margin-right: 5%;
+}
+
+.techno_logo img
+{
+    border-radius: 0px;
+}
+
+
+
+.scolarite_verticale /*Illustration différente pour les téléphones*/
+{
+    display: none;
+}
+
+.scolarite
+{
+    margin-top: 9vh;
+    width: 83%; /*Donner un peu plus de largeur car une forme arrondie, impression de plus petit*/
+}
+
+.scolarite img
+{
+    width: 100%;
+}
+
+
+
+
+
+/*-----------------------------EXPERIENCE PRO-----------------------------*/
+#experiences
+{
+    margin-top: 5vh;
+
+    /*Pour pouvoir passer devant la Div du Vertical Nav*/
+    position: relative;
+    
+    /*Règles spécifiques quand il y a le Vnav*/
+    z-index: 2;
+    margin-right: 6rem;
+}
+
+.bulle_année
+{
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+#experiences h1 
+{
+    font-size: clamp(1.5rem, 2vw, 3.5rem);
+    text-shadow: 3px 3px 0 rgb(160, 136, 0);
+    margin-left: 3vw;
+    margin-right: 1vw;
+}
+
+#experiences p
+{
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: clamp(1rem, 2vw, 3rem);
+    text-align: left;
+    width: 70%;
+
+    background-color: rgb(36, 48, 48);
+    padding: 1.5rem;
+    border-radius: 30px;
+    
+    transition: all .2s ease-in-out;
+}
+
+
+#experiences p:hover
+{
+    background-color: blueviolet;
+    margin-left: 5vw; /*Pour donner l'impression que la bulle avance*/
+}
+
+/*Compenser les écarts du a la différence de taille prise par les dates*/
+.seize 
+{
+    margin-left: 0.89vw ;
+}
+
+.dixhuit 
+{
+    margin-left: 0.89vw ;
+}
+
+.vingt_et_un
+{  
+    margin-left: 0.89vw ;
+}
+
+
+
+
+
+/*-----------------------------PROJETS-----------------------------*/
+#projets
+{
+    margin-top: 5vh;
+    margin-bottom: 20vh;
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    /*Règles spécifiques quand il y a le Vnav*/
+    margin-right: 6rem;
+    margin-left: 6rem;
+}
+
+.projets_element
+{ 
+    width: 23vw; /*Taille des élements*/
+    min-width: 300px;
+
+    margin: 0.5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.projets_element h1, .projets_element p
+{
+    text-align: center;
+    padding-left: 0.5rem; /*pour ne pas que le texte s'étende jusqu'au bord du pochon*/
+}
+
+.projets_element p /*Est ce que lorsque l'on veut séparer des éléments est ce que c'est mieux de faire margin top ou bottom ?*/
+{
+    margin-top: 0.5rem;
+}
+
+.projets_element a 
+{
+    text-decoration: none;
+    color: white;
+    transition: all .2s ease-in-out;
+}
+
+.projets_element a:hover
+{
+    color: rgb(254, 191, 17) ;
+    text-shadow: 2px 2px 20px rgba(245, 245, 245, 0.247);
+}
+
+.projets_element img
+{
+    width: 100%;
+    border-radius: 30px;
+    transform: scale(0.95);
+    
+    transition: all .2s ease-in-out;
+}
+
+.projets_pochon
+{
+    height: 40vh;
+    max-height: 300px ;
+    /*height: 25vw;*/
+    width: 100%;
+
+    background-color: rgb(10, 10, 102);
+    background: url(images/textures/hero_background_8BIT.png ) center;
+    clip-path: polygon(50% 15%, 100% 0, 100% 75%, 50% 85%, 0 75%, 0 0);
+    margin-top: -12vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Donner l'impression que le tout "s'ouvre"
+.projets_element img:hover
+{ 
+    margin-bottom: 2rem;
+    margin-top: -1rem;  
+}
+*/
+
+.affiche_projet:hover
+{
+    margin-top: -2rem;
+    margin-bottom: 2rem;    
+}
+
+.projets_element ul 
+{
+    margin-top: 1rem; 
+
+    /*Pour que le logo git reste aligné sur le pochon malgré ses changements de taille*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.projets_element ul li 
+{
+    width: 75%;
+}
+
+.projets_element ul li img
+{
+    width: 100%;
+}
+
+.projets_element ul li img:hover
+{
+    transform: scale(1.1);
+}
+
+
+
+
+
+/*-----------------------------CONTACT-----------------------------*/
+#contact
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.contact_texte
+{
+    width: 30%;
+    min-width: 18rem;
+
+    background-color: rgba(68, 68, 68, 0.116);
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.568);
+    border-radius: 13px;
+    padding: 1rem;
+}
+
+#contact h1
+{
+    text-align: center;
+    font-size: 2rem ; 
+}
+
+#contact p
+{
+    margin-top: 0.5rem;
+    text-align: center;
+    word-wrap:break-word;
+}
+
+#contact ul 
+{
+    text-align: center;
+    margin-top: 1.5rem;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+
+    background-color: rgba(68, 68, 68, 0.116);
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.568) inset;
+    border-radius: 13px;
+    padding: 1rem;
+}
+
+.contact_phone
+{
+    font-size: 1.06rem;
+}
+
+#contact a
+{
+    background-color: rgb(254, 191, 17);
+    color: white;
+    text-decoration: none;
+    font-family: Lemon ,Arial, Helvetica, sans-serif;
+    font-weight: 200;
+    
+    margin-top: 2rem;
+    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 20px;
+
+    transition: all .2s ease-in-out;
+
+    /*Pour pouvoir passer devant la Div du Vertical Nav*/
+    position: relative;
+    z-index: 2;
+}
+
+#contact a:hover
+{
+   background-color: rgb(2, 238, 233);
+}
+
+
+
+
+
+/*-----------------------------SMARTPHONES SOCIALS-----------------------------*/
+#smartphones_socials
+{
+    display: none; /*Ne dois pas s'afficher sur un écrant desktop*/
+}
+
+#smartphones_socials ul
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+    margin-top: 2rem;
+    margin-bottom: 15vh;
+}
+
+#smartphones_socials ul li 
+{
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+#smartphones_socials img
+{
+    width: 3rem;
+    transition: all .2s ease-in-out;
+}
+
+#smartphones_socials img:hover
+{
+  transform: scale(1.2);
+}
+
+
+
+
+
+/*-----------------------------PIED DE PAGE-----------------------------*/
+footer
+{
+    height: 50vh;
+    background-color: rgb(25, 3, 59);
+    clip-path: polygon(50% 50%, 100% 0, 100% 100%, 0 100%, 0 0); /*deux fois moins grand donc modification du point angulaux deux fois plus importante */
+    background: url(images/textures/hero_background_8BIT.png);
+}
+
+
+
+
+
+
+
+
+
+
+/*@media screen and (orientation: portrait)*/
+@media all and (max-width : 1135px)
+{
+    /*passage menu burger*/
+    .check_btn
+    {
+        display: block;
+    }
+
+    #horizontal_nav ul
+    {
+        position: absolute; 
+        top: 80px;
+        left: -100%; 
+        
+        transition: all .5s ease-in-out;
+
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        background-color: rgb(29, 29, 29);
+    }
+
+    #horizontal_nav ul li
+    {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    #check:checked ~ ul 
+    {
+        left: 0;
+    }
+
+
+
+
+
+    /*-----------------------------HERO SECTION-----------------------------*/
+    #hero img
+    {
+        display: none;
+    }
+
+
+    /*-----------------------------VERTICAL NAV-----------------------------*/
+    #Vertical_Nav
+    {
+        display: none;
+    }
+
+        
+    /*-----------------------------About-----------------------------*/
+    #biographie
+    {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .biographie_texte
+    {
+        width: 100%;
+    }
+
+    #biographie p 
+    {
+        border-bottom: 3px solid rgba(85, 85, 85, 0.425); 
+    }
+
+    .techno
+    {
+        border-bottom: 3px solid rgba(85, 85, 85, 0.425); 
+        padding-bottom: 1rem;
+    }
+ 
+    .profil
+    {
+        width: 90%;
+        margin-top: 2rem;
+    }
+
+    .profil img 
+    {
+        border-radius: 50px;
+    }
+
+
+    .scolarite_verticale
+    {
+        display: block;
+    }
+    
+    .scolarite_horizontale
+    {
+       display: none;
+    }
+    
+
+    /*-----------------------------EXPERIENCE PRO-----------------------------*/
+    #experiences
+    {  
+        /*Règles spécifiques quand il y a le Vnav*/
+        margin-right: 0;
+        padding-right: 1rem;
+    }
+
+
+    /*-----------------------------PROJETS-----------------------------*/
+    #projets
+    {
+        flex-direction: column;
+
+        /*Règles spécifiques quand il y a le Vnav*/
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .projets_element
+    {
+        width: 80%; /*Taille des élements*/
+        margin-bottom: 3rem;
+    }
+
+    .projets_pochon
+    {
+        max-height: 500px;
+        /*margin-top: -16vw;*/
+
+    }
+
+
+    /*-----------------------------SMARTPHONES SOCIALS-----------------------------*/
+    #smartphones_socials
+    {
+        display: block;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+@media all and (max-width : 500px) /*petit ecrants (iphone 5, SE...)*/
+{
+    /*-----------------------------MENU DE NAVIGATION-----------------------------*/
+    .nav_logo
+    {
+        padding-left: 20px;
+    }
+
+
+    /*-----------------------------EXPERIENCE PRO-----------------------------*/
+    #experiences p:hover
+    {
+        pointer-events: none;
+    }
+
+}
