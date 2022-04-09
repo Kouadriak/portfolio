@@ -635,6 +635,11 @@ header
     align-items: center;
     justify-content: center;
 
+    /*Règles spécifiques quand il y a le Vnav*/
+    position: relative;
+    z-index: 2;
+    margin-right: 6rem ;
+    margin-left: 6rem;
 }
 
 .contact_texte
@@ -896,6 +901,15 @@ footer
 
     }
 
+    
+    /*-----------------------------CONTACT-----------------------------*/
+    #contact
+    { 
+        /*Règles spécifiques quand il n'y a plus le Vnav*/
+        margin-right: 0;
+        margin-left: 0;
+    }
+    
 
     /*-----------------------------SMARTPHONES SOCIALS-----------------------------*/
     #smartphones_socials
