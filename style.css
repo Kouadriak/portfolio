@@ -245,7 +245,8 @@ header
 .hero_texte h3
 {
     /*font-size: clamp(1.455rem, 6.2vw , 5rem);*/
-    font-size: clamp(0.85rem, 3.67vw , 2.95rem);
+    /*font-size: clamp(0.85rem, 3.67vw , 2.95rem); ancien texte*/ 
+    font-size: clamp(1.51rem, 6.43vw , 5.17rem);
     font-family: Lemon ,Arial, Helvetica, sans-serif;
     font-weight: 200;
 }
